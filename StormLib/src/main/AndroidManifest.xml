@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.storm.mylibrary" >
+    <application>
+        <activity android:name=".permission.PermissionActivity"
+            android:theme="@android:style/Theme.Translucent"
+            ></activity>
+    </application>
+</manifest>

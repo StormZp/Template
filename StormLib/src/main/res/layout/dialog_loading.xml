@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@mipmap/loading_bg">
+
+        <com.storm.mylibrary.progress.AVLoadingIndicatorView
+            android:id="@+id/loading_view"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:visibility="visible"
+            app:indicator_colors="#fff"
+            app:indicators="LineSpinFadeLoader" />
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="3dp"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="#fff"
+            android:textSize="14sp" />
+    </LinearLayout>
+</RelativeLayout>
+
