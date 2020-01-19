@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/power"
+        android:icon="@mipmap/ic_launcher"
+        android:title="page1" />
+
+    <item
+        android:id="@+id/energy"
+        android:icon="@mipmap/ic_launcher"
+        android:title="page2" />
+
+    <item
+        android:id="@+id/timer"
+        android:icon="@mipmap/ic_launcher"
+        android:title="page3" />
+
+    <item
+        android:id="@+id/schedulle"
+        android:icon="@mipmap/ic_launcher"
+        android:title="page4" />
+
+
+</menu>

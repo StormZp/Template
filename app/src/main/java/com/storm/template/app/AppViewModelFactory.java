@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.storm.template.data.Repository;
 import com.storm.mylibrary.utils.Utils;
+import com.storm.template.module.viewpage.page1.ViewPagerEmptyViewModel;
 
 public class AppViewModelFactory extends ViewModelProvider.NewInstanceFactory {
 
@@ -37,8 +38,8 @@ public class AppViewModelFactory extends ViewModelProvider.NewInstanceFactory {
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
 
-//        if (modelClass.isAssignableFrom(CoverViewModel.class)) {
-//            return (T) new CoverViewModel(mRepository);
+//        if (modelClass.isAssignableFrom(ViewPagerEmptyViewModel.class)) {
+//            return (T) new ViewPagerEmptyViewModel(mRepository);
 //        }
 
         throw new IllegalArgumentException("Unknown ViewModel class: " + modelClass.getName());
