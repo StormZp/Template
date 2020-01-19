@@ -5,7 +5,7 @@
 
         <variable
             name="viewModel"
-            type="com.storm.template.module.Test.TestViewModel" />
+            type="com.storm.template.module.empty.EmptyViewModel" />
     </data>
 
     <RelativeLayout
@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!" />
+            android:text="我是空白页面" />
 
     </RelativeLayout>
 </layout>

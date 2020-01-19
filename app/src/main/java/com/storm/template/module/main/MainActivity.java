@@ -1,13 +1,13 @@
-package com.storm.template.module.test;
+package com.storm.template.module.main;
 
 import android.os.Bundle;
 
 import com.storm.template.BR;
 import com.storm.template.R;
+import com.storm.template.databinding.MainActivityBinding;
 import com.storm.template.base.BaseActivity;
-import com.storm.template.databinding.TestActivityBinding;
 
-public class TestActivity extends BaseActivity<TestActivityBinding, TestViewModel> {
+public class MainActivity extends BaseActivity<MainActivityBinding, MainViewModel> {
     @Override
     public int initVariableId() {
         return BR.viewModel;
@@ -15,7 +15,7 @@ public class TestActivity extends BaseActivity<TestActivityBinding, TestViewMode
 
     @Override
     protected int initContentView(Bundle savedInstanceState) {
-        return R.layout.test_activity;
+        return R.layout.main_activity;
     }
 }
 
