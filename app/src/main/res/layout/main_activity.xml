@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-   >
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -18,14 +17,20 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:onClickCommand="@{viewModel.emptyActivityCommand}"
-            android:text="空白页面" />
+            android:text="空白页面"
+            app:onClickCommand="@{viewModel.emptyActivityCommand}" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:onClickCommand="@{viewModel.viewPagerActivityCommand}"
-            android:text="viewPager 页面" />
+            android:text="viewPager 页面"
+            app:onClickCommand="@{viewModel.viewPagerActivityCommand}" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="nav 页面"
+            app:onClickCommand="@{viewModel.navActivityCommand}" />
 
     </LinearLayout>
 </layout>

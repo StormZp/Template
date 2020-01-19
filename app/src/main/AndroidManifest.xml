@@ -15,6 +15,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".module.viewpage.ViewPagerActivityActivity" />
         <activity android:name=".module.empty.EmptyActivity" />
+        <activity android:name=".module.nav.NavActivity" />
         <activity android:name=".module.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
