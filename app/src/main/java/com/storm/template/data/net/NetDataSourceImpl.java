@@ -1,13 +1,6 @@
 package com.storm.template.data.net;
 
-import com.google.gson.JsonObject;
 import com.storm.template.data.net.service.Api;
-
-import java.util.List;
-
-import io.reactivex.Observable;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
 
 public class NetDataSourceImpl implements NetDataSource {
 

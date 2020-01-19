@@ -1,12 +1,12 @@
 package com.storm.template.module.nav.test;
 
-import com.storm.mylibrary.base.BaseViewModel;
+import com.storm.mylibrary.base.SuperBaseViewModel;
 import com.storm.mylibrary.bean.ObservableString;
 import com.storm.mylibrary.command.BindingAction;
 import com.storm.mylibrary.command.BindingCommand;
 import com.storm.template.R;
 
-public class NavTestViewModel extends BaseViewModel {
+public class NavTestViewModel extends SuperBaseViewModel {
     public ObservableString title = new ObservableString("页面3333333333333333333333333");
     public BindingCommand page2 = new BindingCommand(new BindingAction() {
         @Override

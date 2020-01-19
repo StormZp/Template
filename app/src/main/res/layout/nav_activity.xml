@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.storm.mylibrary.base.BaseViewModel" />
+            type="com.storm.mylibrary.base.SuperBaseViewModel" />
     </data>
 
     <RelativeLayout

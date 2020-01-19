@@ -2,9 +2,9 @@ package com.storm.template.module.nav;
 
 import android.os.Bundle;
 
-import com.storm.mylibrary.base.BaseViewModel;
 import com.storm.template.R;
 import com.storm.template.base.BaseActivity;
+import com.storm.template.base.BaseViewModel;
 import com.storm.template.databinding.NavActivityBinding;
 
 public class NavActivity extends BaseActivity<NavActivityBinding, BaseViewModel> {
@@ -20,5 +20,6 @@ public class NavActivity extends BaseActivity<NavActivityBinding, BaseViewModel>
 
     @Override
     protected void initData() {
+
     }
 }

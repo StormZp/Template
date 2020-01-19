@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel;
 
 import io.reactivex.annotations.NonNull;
 
-public class BaseItemViewModel <VM extends BaseViewModel> extends ViewModel {
+public class BaseItemViewModel <VM extends SuperBaseViewModel> extends ViewModel {
     public VM viewModel;
 
     public BaseItemViewModel(@NonNull VM viewModel) {

@@ -1,8 +1,8 @@
 package com.storm.template.module.main;
 
-import com.storm.mylibrary.base.BaseViewModel;
 import com.storm.mylibrary.command.BindingAction;
 import com.storm.mylibrary.command.BindingCommand;
+import com.storm.template.base.BaseViewModel;
 import com.storm.template.module.empty.EmptyActivity;
 import com.storm.template.module.nav.NavActivity;
 import com.storm.template.module.viewpage.ViewPagerActivityActivity;
@@ -27,4 +27,8 @@ public class MainViewModel extends BaseViewModel {
         }
     });
 
+    @Override
+    protected void initData() {
+
+    }
 }

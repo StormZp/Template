@@ -22,7 +22,7 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.Map;
 
-public abstract class SuperBaseFragment<V extends ViewDataBinding, VM extends BaseViewModel> extends Fragment {
+public abstract class SuperBaseFragment<V extends ViewDataBinding, VM extends SuperBaseViewModel> extends Fragment {
     protected V mBinding;
     protected VM mViewModel;
     private CustomProgressDialog dialog;
@@ -52,7 +52,7 @@ public abstract class SuperBaseFragment<V extends ViewDataBinding, VM extends Ba
                 modelClass = (Class) ((ParameterizedType) type).getActualTypeArguments()[1];
             } else {
                 //如果没有指定泛型参数，则默认使用BaseViewModel
-                modelClass = BaseViewModel.class;
+                modelClass = SuperBaseViewModel.class;
             }
             mViewModel = (VM) ViewModelProviders.of(this).get(modelClass);
         }

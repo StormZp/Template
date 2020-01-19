@@ -17,5 +17,6 @@ public class MainActivity extends BaseActivity<MainActivityBinding, MainViewMode
     protected int initContentView(Bundle savedInstanceState) {
         return R.layout.main_activity;
     }
+
 }
 

@@ -6,9 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.storm.template.data.Repository;
 import com.storm.mylibrary.utils.Utils;
-import com.storm.template.module.viewpage.page1.ViewPagerEmptyViewModel;
+import com.storm.template.data.Repository;
 
 public class AppViewModelFactory extends ViewModelProvider.NewInstanceFactory {
 
@@ -34,6 +33,10 @@ public class AppViewModelFactory extends ViewModelProvider.NewInstanceFactory {
         return INSTANCE;
     }
 
+    public Repository getRepository() {
+        return mRepository;
+    }
+
     @NonNull
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
@@ -42,6 +45,12 @@ public class AppViewModelFactory extends ViewModelProvider.NewInstanceFactory {
 //            return (T) new ViewPagerEmptyViewModel(mRepository);
 //        }
 
-        throw new IllegalArgumentException("Unknown ViewModel class: " + modelClass.getName());
+        try {
+            return (T) modelClass.newInstance();
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new IllegalArgumentException("Unknown ViewModel class: " + modelClass.getName());
+        }
+//
     }
 }

@@ -18,13 +18,13 @@ import java.util.Map;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 
-public class BaseViewModel extends ViewModel implements LifecycleObserver {
+public class SuperBaseViewModel extends ViewModel implements LifecycleObserver {
     public Application application;
     protected UIChangeLiveData uc;
     //管理RxJava，主要针对RxJava异步操作造成的内存泄漏
     private CompositeDisposable mCompositeDisposable;
 
-    public BaseViewModel() {
+    public SuperBaseViewModel() {
         this.application = Utils.getContext();
     }
 

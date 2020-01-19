@@ -22,7 +22,7 @@ public class Injection {
 //        //本地数据源
 //        LocalDataSource localDataSource = LocalDataSourceImpl.getInstance();
 
-
+        RetrofitClient.setUrl(Constants.SERVER_URL);
         //两条分支组成一个数据仓库
         return Repository.getInstance(
                 LocalDataSourceImpl.getInstance(),

@@ -7,7 +7,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -18,9 +17,7 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.Map;
 
-import kotlin.Suppress;
-
-public abstract class SuperBaseActivity<V extends ViewDataBinding, VM extends BaseViewModel> extends AppCompatActivity {
+public abstract class SuperBaseActivity<V extends ViewDataBinding, VM extends SuperBaseViewModel> extends AppCompatActivity {
     protected V mBinding;
     protected VM mViewModel;
 
@@ -39,7 +36,7 @@ public abstract class SuperBaseActivity<V extends ViewDataBinding, VM extends Ba
                 modelClass = (Class) ((ParameterizedType) type).getActualTypeArguments()[1];
             } else {
                 //如果没有指定泛型参数，则默认使用BaseViewModel
-                modelClass = BaseViewModel.class;
+                modelClass = SuperBaseViewModel.class;
             }
             mViewModel = (VM) ViewModelProviders.of(this).get(modelClass);
         }

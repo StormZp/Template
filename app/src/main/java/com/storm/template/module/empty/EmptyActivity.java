@@ -17,5 +17,6 @@ public class EmptyActivity extends BaseActivity<EmptyActivityBinding, EmptyViewM
     protected int initContentView(Bundle savedInstanceState) {
         return R.layout.empty_activity;
     }
+
 }
 
