@@ -61,19 +61,19 @@ public class ViewPagerActivityActivity extends BaseActivity<ViewpageActivityBind
 
 
                 }
-                return false;
+                return true;
             }
         });
 
-        fragments = new ArrayList<>();
-        fragments.add(new EmptyFragment("页面一"));
-        fragments.add(new EmptyFragment("页面二"));
-        fragments.add(new EmptyFragment("页面三"));
-        fragments.add(new EmptyFragment("页面四"));
-        mBinding.viewpager.setAdapter(new FragmentAdapter(this.getSupportFragmentManager(), this, fragments));
-        mBinding.viewpager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                fragments = new ArrayList<>();
+                fragments.add(new EmptyFragment("页面一"));
+                fragments.add(new EmptyFragment("页面二"));
+                fragments.add(new EmptyFragment("页面三"));
+                fragments.add(new EmptyFragment("页面四"));
+                mBinding.viewpager.setAdapter(new FragmentAdapter(this.getSupportFragmentManager(), this, fragments));
+                mBinding.viewpager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+                    @Override
+                    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
             }
 
