@@ -128,9 +128,10 @@ public abstract class SuperBaseActivity<V extends ViewDataBinding, VM extends Su
 
     public void showDialog(String title) {
         if (dialog != null) {
-            dialog = new CustomProgressDialog(this, title);
-            dialog.show();
+            dismissDialog();
         }
+        dialog = new CustomProgressDialog(this, title);
+        dialog.show();
     }
 
     public void dismissDialog() {
