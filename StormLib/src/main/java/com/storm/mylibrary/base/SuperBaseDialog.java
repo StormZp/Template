@@ -20,6 +20,7 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.storm.mylibrary.R;
 import com.storm.mylibrary.base.UIChangeLiveData.ParameterField;
+import com.storm.mylibrary.utils.TUtil;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -32,7 +33,7 @@ public abstract class SuperBaseDialog<V extends ViewDataBinding, VM extends Supe
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStyle(DialogFragment.STYLE_NORMAL,R.style.NoticeDialogStyle);
+        setStyle(DialogFragment.STYLE_NORMAL, R.style.NoticeDialogStyle);
     }
 
     @Nullable
@@ -93,6 +94,7 @@ public abstract class SuperBaseDialog<V extends ViewDataBinding, VM extends Supe
     protected VM initViewModel() {
         return null;
     }
+
     /**
      * 初始化ViewModel的id
      *
@@ -103,7 +105,6 @@ public abstract class SuperBaseDialog<V extends ViewDataBinding, VM extends Supe
     protected abstract int initContentView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState);
 
 
-
     //注册ViewModel与View的契约UI回调事件
     protected void registorUIChangeLiveDataCallBack() {
         //跳入新页面
@@ -111,11 +112,11 @@ public abstract class SuperBaseDialog<V extends ViewDataBinding, VM extends Supe
             @Override
             public void onChanged(@Nullable Map<String, Object> params) {
                 Intent intent = (Intent) params.get(ParameterField.INTENT);
-                if (intent==null){
+                if (intent == null) {
                     Class<?> clz = (Class<?>) params.get(ParameterField.CLASS);
                     Bundle bundle = (Bundle) params.get(ParameterField.BUNDLE);
                     startActivity(clz, bundle);
-                }else {
+                } else {
                     startActivity(intent);
                 }
             }
@@ -133,7 +134,7 @@ public abstract class SuperBaseDialog<V extends ViewDataBinding, VM extends Supe
         mViewModel.getUC().getFinishEvent().observe(this, new Observer<Void>() {
             @Override
             public void onChanged(@Nullable Void v) {
-               dismiss();
+                dismiss();
             }
         });
     }
@@ -165,4 +166,13 @@ public abstract class SuperBaseDialog<V extends ViewDataBinding, VM extends Supe
     public void startNav(int canonicalName, Bundle bundle) {
         NavHostFragment.findNavController(this).navigate(canonicalName, bundle);
     }
+
+    public void toast(String msg) {
+        TUtil.getInstance().s(msg);
+    }
+
+    public void toast(int msg) {
+        TUtil.getInstance().s(msg);
+    }
+
 }

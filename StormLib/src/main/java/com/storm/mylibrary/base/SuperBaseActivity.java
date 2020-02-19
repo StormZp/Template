@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.storm.mylibrary.base.UIChangeLiveData.ParameterField;
 import com.storm.mylibrary.progress.CustomProgressDialog;
+import com.storm.mylibrary.utils.TUtil;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -136,6 +137,13 @@ public abstract class SuperBaseActivity<V extends ViewDataBinding, VM extends Su
         if (dialog != null && dialog.isShowing()) {
             dialog.dismiss();
         }
+    }
+    public void toast(String msg) {
+        TUtil.getInstance().s(msg);
+    }
+
+    public void toast(int msg) {
+        TUtil.getInstance().s(msg);
     }
 
     /**

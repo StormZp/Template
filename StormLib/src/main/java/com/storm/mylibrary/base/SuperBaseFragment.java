@@ -17,6 +17,7 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.storm.mylibrary.base.UIChangeLiveData.ParameterField;
 import com.storm.mylibrary.progress.CustomProgressDialog;
+import com.storm.mylibrary.utils.TUtil;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -136,6 +137,13 @@ public abstract class SuperBaseFragment<V extends ViewDataBinding, VM extends Su
                 NavHostFragment.findNavController(SuperBaseFragment.this).popBackStack();
             }
         });
+    }
+    public void toast(String msg) {
+        TUtil.getInstance().s(msg);
+    }
+
+    public void toast(int msg) {
+        TUtil.getInstance().s(msg);
     }
 
     public void showDialog(String title) {
