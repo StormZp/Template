@@ -29,6 +29,7 @@ import java.util.Map;
 public abstract class SuperBaseDialog<V extends ViewDataBinding, VM extends SuperBaseViewModel> extends DialogFragment {
     protected V mBinding;
     protected VM mViewModel;
+    private OnCloseListener closeListener;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,6 +47,8 @@ public abstract class SuperBaseDialog<V extends ViewDataBinding, VM extends Supe
     @Override
     public void onDismiss(@NonNull DialogInterface dialog) {
         super.onDismiss(dialog);
+        if (closeListener != null)
+            closeListener.close();
         onDestroy();
     }
 
@@ -173,6 +176,14 @@ public abstract class SuperBaseDialog<V extends ViewDataBinding, VM extends Supe
 
     public void toast(int msg) {
         TUtil.getInstance().s(msg);
+    }
+
+    public void onClose(OnCloseListener listener) {
+        closeListener = listener;
+    }
+
+    public interface OnCloseListener {
+        void close();
     }
 
 }
