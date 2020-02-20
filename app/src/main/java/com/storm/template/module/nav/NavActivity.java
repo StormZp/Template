@@ -4,10 +4,9 @@ import android.os.Bundle;
 
 import com.storm.template.R;
 import com.storm.template.base.BaseActivity;
-import com.storm.template.base.BaseViewModel;
 import com.storm.template.databinding.NavActivityBinding;
 
-public class NavActivity extends BaseActivity<NavActivityBinding, BaseViewModel> {
+public class NavActivity extends BaseActivity<NavActivityBinding, NavViewModel > {
     @Override
     public int initVariableId() {
         return com.storm.template.BR.viewModel;
@@ -18,8 +17,5 @@ public class NavActivity extends BaseActivity<NavActivityBinding, BaseViewModel>
         return R.layout.nav_activity;
     }
 
-    @Override
-    protected void initData() {
 
-    }
 }

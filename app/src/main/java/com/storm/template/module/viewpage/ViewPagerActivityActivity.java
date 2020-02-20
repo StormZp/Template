@@ -86,6 +86,7 @@ public class ViewPagerActivityActivity extends BaseActivity<ViewpageActivityBind
 
             }
         });
+
     }
 
 }
