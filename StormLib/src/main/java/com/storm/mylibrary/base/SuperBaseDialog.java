@@ -178,7 +178,7 @@ public abstract class SuperBaseDialog<V extends ViewDataBinding, VM extends Supe
         TUtil.getInstance().s(msg);
     }
 
-    public void onClose(OnCloseListener listener) {
+    public void setCloseListener(OnCloseListener listener) {
         closeListener = listener;
     }
 
