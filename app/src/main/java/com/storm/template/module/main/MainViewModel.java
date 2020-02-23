@@ -6,6 +6,7 @@ import com.storm.template.base.BaseViewModel;
 import com.storm.template.module.empty.EmptyActivity;
 import com.storm.template.module.item.ItemActivity;
 import com.storm.template.module.nav.NavActivity;
+import com.storm.template.module.sdialog.SdialogActivity;
 import com.storm.template.module.viewpage.ViewPagerActivityActivity;
 
 public class MainViewModel extends BaseViewModel {
@@ -31,6 +32,11 @@ public class MainViewModel extends BaseViewModel {
         @Override
         public void call() {
             startActivity(ItemActivity.class);
+        }
+    }); public BindingCommand dialogActivityCommand = new BindingCommand(new BindingAction() {
+        @Override
+        public void call() {
+            startActivity(SdialogActivity.class);
         }
     });
 

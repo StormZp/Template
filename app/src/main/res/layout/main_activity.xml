@@ -38,6 +38,12 @@
             android:text="item 页面"
             app:onClickCommand="@{viewModel.itemActivityCommand}" />
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="dialog 页面"
+            app:onClickCommand="@{viewModel.dialogActivityCommand}" />
+
     </LinearLayout>
 </layout>
 

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dialog_press">#d8d8d8</color>
+    <color name="dialog_normal">#ffffff</color>
+    <color name="dialog_item">#ff1E90FF</color>
+    <color name="dialog_cancel">#ff0000</color>
+    <color name="dialog_stroke">#d8d8d8</color>
+</resources>
