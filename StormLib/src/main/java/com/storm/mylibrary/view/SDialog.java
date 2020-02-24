@@ -15,7 +15,6 @@ import androidx.databinding.DataBindingUtil;
 
 import com.storm.mylibrary.R;
 import com.storm.mylibrary.databinding.SDialogBinding;
-import com.storm.mylibrary.utils.AppUtil;
 
 import java.util.ArrayList;
 
@@ -153,8 +152,11 @@ public class SDialog extends Dialog {
 
             //修改布局
             binding.clickLay.setOrientation(style == DialogStyle.bottom ? LinearLayout.VERTICAL : LinearLayout.HORIZONTAL);
-            int padding = AppUtil.dip2Px(context, 8);
-            int size = AppUtil.dip2Px(context, 16);
+//            int padding = AppUtil.dip2Px(context, 8);
+//            int size = AppUtil.dip2Px(context, 16);
+            int padding = 8;
+            int size = 16;
+
             if (items != null && items.size() != 0) {
                 int itemSize = items.size();
                 for (int i = 0; i < itemSize; i++) {
