@@ -22,13 +22,13 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/x1"
+            android:layout_height="1dp"
             android:background="@color/colorPrimary" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/x60"
+            android:layout_height="60dp"
 
             />
 

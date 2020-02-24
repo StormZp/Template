@@ -3,6 +3,6 @@
 
     <solid android:color="@color/dialog_press" />
     <stroke
-        android:width="@dimen/x01"
+        android:width=".1dp"
         android:color="@color/dialog_stroke" />
 </shape>

@@ -11,13 +11,13 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/x48"
+        android:layout_height="48dp"
         android:gravity="center"
        >
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/x48"
+            android:layout_height="48dp"
             android:gravity="center"
             app:onClickCommand="@{viewModel.switchClickCommand}"
             android:text="@{viewModel.mposition}" />
