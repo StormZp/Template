@@ -37,6 +37,8 @@ public class SDialog extends Dialog {
         private OnCancelListener cancelListener;
         private int itemColor;
         private int cancelColor;
+        private int textSize = 16;
+        private int bpPadding = 8;
 
         public Builder(Context context) {
             this.context = context;
@@ -83,6 +85,17 @@ public class SDialog extends Dialog {
             this.title = (String) context.getText(title);
             return this;
         }
+
+        public Builder setTextSize(int size) {
+            this.textSize = size;
+            return this;
+        }
+
+        public Builder setPadding(int size) {
+            this.bpPadding = size;
+            return this;
+        }
+
 
         /**
          * Set the Dialog title from String
@@ -154,8 +167,6 @@ public class SDialog extends Dialog {
             binding.clickLay.setOrientation(style == DialogStyle.bottom ? LinearLayout.VERTICAL : LinearLayout.HORIZONTAL);
 //            int padding = AppUtil.dip2Px(context, 8);
 //            int size = AppUtil.dip2Px(context, 16);
-            int padding = 8;
-            int size = 16;
 
             if (items != null && items.size() != 0) {
                 int itemSize = items.size();
@@ -175,15 +186,15 @@ public class SDialog extends Dialog {
                             LayoutParams.MATCH_PARENT, 1));
                     view.setGravity(Gravity.CENTER);
                     view.setTextColor(itemColor);
-                    view.setTextSize(size);
+                    view.setTextSize(this.textSize);
                     view.setBackgroundResource((style == DialogStyle.bottom || i != itemSize - 1) ? R.drawable.select_center_middle : R.drawable.select_center_left);
-                    view.setPadding(0, padding, 0, padding);
+                    view.setPadding(bpPadding, bpPadding, bpPadding, bpPadding);
                     binding.clickLay.addView(view, 0);
                 }
             }
             binding.cancelBtn.setText(cancel_btnText);
-            binding.cancelBtn.setTextSize(size);
-            binding.cancelBtn.setPadding(0, padding, 0, padding);
+            binding.cancelBtn.setTextSize(this.textSize);
+            binding.cancelBtn.setPadding(bpPadding, bpPadding, bpPadding, bpPadding);
             binding.cancelBtn.setTextColor(cancelColor);
             binding.cancelBtn.setBackgroundResource(style == DialogStyle.bottom ? R.drawable.select_bottom : R.drawable.select_center_right);
             binding.cancelBtn.setOnClickListener(new View.OnClickListener() {
