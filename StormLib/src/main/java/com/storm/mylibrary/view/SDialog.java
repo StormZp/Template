@@ -146,6 +146,8 @@ public class SDialog extends Dialog {
             final SDialog dialog = new SDialog(context,
                     style == DialogStyle.bottom ? R.style.ActionSheetDialogStyle : R.style.CustomProgressDialog);
             SDialogBinding binding = DataBindingUtil.inflate(inflater, R.layout.s_dialog, null, false);
+            binding.clickLay.setBackgroundResource(style == DialogStyle.bottom ? R.drawable.shape_bottom3 : R.drawable.shape_bottom1);
+
 //            View layout = inflater.inflate(R.layout.s_dialog, null);
 //            ScrollView.LayoutParams lp =new ScrollView.LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT);
 //            lp.gravity = style == DialogStyle.bottom ? Gravity.BOTTOM : Gravity.CENTER;
@@ -161,6 +163,8 @@ public class SDialog extends Dialog {
             }
             if (!TextUtils.isEmpty(message)) {
                 binding.message.setText(message);
+            } else {
+                binding.messageRl.setVisibility(View.GONE);
             }
 
             //加样式
