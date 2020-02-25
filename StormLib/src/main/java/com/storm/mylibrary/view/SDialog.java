@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,10 +20,14 @@ import com.storm.mylibrary.databinding.SDialogBinding;
 import java.util.ArrayList;
 
 public class SDialog extends Dialog {
-
+    private TextView cancelTv;
 
     public SDialog(@NonNull Context context, int themeResId) {
         super(context, themeResId);
+    }
+
+    public TextView getCancelTv() {
+        return cancelTv;
     }
 
     public static class Builder {
@@ -147,7 +152,7 @@ public class SDialog extends Dialog {
 //            binding.scorllLay.setLayoutParams(lp);
 
 
-            dialog.addContentView(binding.getRoot(), new LayoutParams(
+            dialog.addContentView(binding.getRoot(), new RelativeLayout.LayoutParams(
                     LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
             dialog.getWindow().setGravity(style == DialogStyle.bottom ? Gravity.BOTTOM : Gravity.CENTER);
 
@@ -192,6 +197,9 @@ public class SDialog extends Dialog {
                     binding.clickLay.addView(view, 0);
                 }
             }
+            if (TextUtils.isEmpty(cancel_btnText)) {
+                binding.cancelBtn.setVisibility(View.GONE);
+            }
             binding.cancelBtn.setText(cancel_btnText);
             binding.cancelBtn.setTextSize(this.textSize);
             binding.cancelBtn.setPadding(bpPadding, bpPadding, bpPadding, bpPadding);
@@ -204,7 +212,7 @@ public class SDialog extends Dialog {
                         cancelListener.cancel(dialog);
                 }
             });
-
+            dialog.cancelTv = binding.cancelBtn;
             return dialog;
         }
     }
