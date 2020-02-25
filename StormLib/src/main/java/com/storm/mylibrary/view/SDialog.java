@@ -163,9 +163,10 @@ public class SDialog extends Dialog {
             }
             if (!TextUtils.isEmpty(message)) {
                 binding.message.setText(message);
-            } else {
-                binding.messageRl.setVisibility(View.GONE);
             }
+//            else {
+//                binding.messageRl.setVisibility(View.GONE);
+//            }
 
             //加样式
             if (insertView != null) {
